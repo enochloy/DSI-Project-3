@@ -1,0 +1,14 @@
+streamlit
+streamlit_option_menu
+pickle
+numpy
+pandas
+wordcloud
+plotly
+altair
+matplotlib
+matplotlib_venn
+re
+string
+nltk
+scikit-learn

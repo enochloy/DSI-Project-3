@@ -7,7 +7,6 @@ plotly
 altair
 matplotlib
 matplotlib_venn
-re
-string
+regex
 nltk
 scikit-learn

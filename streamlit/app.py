@@ -551,7 +551,10 @@ if selected == 'Consumers':
     st.header('Consumer View')
     st.subheader("Ask us anything!")
     user_comment = st.text_area('Enter here')
-    
+
+    # path for images
+    images_path = os.path.dirname(__file__)
+  
     # Cleaning the string
     cleaned_user_comment = clean_text(user_comment)
     prediction = model.predict(pd.Series(cleaned_user_comment))
@@ -560,22 +563,28 @@ if selected == 'Consumers':
         if prediction == 1:
             col1, col2, col3 = st.columns(3)
             with col1:
-                st.image('images/paleo_puffs.png', width=400)
+                paleo_puffs = images_path+'/images/paleo_puffs.png' 
+                st.image(paleo_puffs, width=400)
                 st.markdown('<p style="font-size:20px; text-align:left;">Paleo Puffs</p>', unsafe_allow_html=True)
             with col2:
-                st.image('images/paleo_chips.webp', width=300)
+                paleo_chips = images_path+'/images/paleo_chips.webp'
+                st.image(paleo_chips, width=300)
                 st.markdown('<p style="font-size:20px; text-align:left;">Paleo Chips</p>', unsafe_allow_html=True)
             with col3:
-                st.image('images/paleo_muesli.png', width=250)
+                paleo_muesli = images_path+'/images/paleo_muesli.png'
+                st.image(paleo_muesli, width=250)
                 st.markdown('<p style="font-size:20px; text-align:left;">Paleo Muesli</p>', unsafe_allow_html=True)
         else:
             col1, col2, col3 = st.columns(3)
             with col1:
-                st.image('images/keto_nut_mix.webp', width=400)
+                keto_nut_mix = images_path+'/images/keto_nut_mix.webp'
+                st.image(keto_nut_mix, width=400)
                 st.markdown('<p style="font-size:20px; text-align:left;">Keto Cookies</p>', unsafe_allow_html=True)
             with col2:
-                st.image('images/keto_cookies.webp', width=400)
+                keto_cookies = images_path+'/images/keto_cookies.webp'
+                st.image(keto_cookies, width=400)
                 st.markdown('<p style="font-size:20px; text-align:left;">Keto Cookies</p>', unsafe_allow_html=True)
             with col3:
-                st.image('images/keto_bar.webp', width=400)
+                keto_bar = images_path+'/images/keto_bar.webp'
+                st.image(keto_bar, width=400)
                 st.markdown('<p style="font-size:20px; text-align:left;">Keto Bar</p>', unsafe_allow_html=True)

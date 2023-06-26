@@ -19,18 +19,21 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 nltk.download('stopwords')
+nltk.download('wordnet')
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import LogisticRegression
 
+from pathlib import Path
+
 # import dataset
-df = pd.read_csv('data/final_df.csv',lineterminator='\n')
+data_path = Path(__file__).parent / 'data/final_df.csv'
+df = pd.read_csv(data_path,lineterminator='\n')
 
 # load the models
-model = pickle.load(open('models/model.pkl', 'rb'))
-with open('models/pipe_gridsearch.pkl', 'rb') as pipe_gridsearch: # open a file, where you stored the pickled data
-    pipe_gridsearch = pickle.load(pipe_gridsearch)
+model_path = Path(__file__).parent / 'models/model.pkl'
+model = pickle.load(open(model_path, 'rb'))
 
 # definitions / lists
 consumer_preference_options = ['Keto','Paleo']
